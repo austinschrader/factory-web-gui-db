@@ -6,7 +6,6 @@
 
 <h3>Engineer Details</h3>
 
-
 <h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
 
 @if (@Model.Machines.Count == 0)
@@ -30,7 +29,6 @@ else
   </ul>
 
 }
-
 
 <p>@Html.ActionLink("Back to Engineers", "Index")</p>
 <p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
