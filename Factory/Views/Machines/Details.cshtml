@@ -8,7 +8,7 @@
 
 <h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
 
-@if (@Model.Machines.Count == 0)
+@if (@Model.Engineers.Count == 0)
 {
   <h2>This Machine is not assigned to any engineers</h2>
 }
@@ -26,5 +26,4 @@ else
 
 <p>@Html.ActionLink("Back to Machines", "Index")</p>
 <p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Remove Machine", "Delete", new { id = Model.MachineId })</p>
