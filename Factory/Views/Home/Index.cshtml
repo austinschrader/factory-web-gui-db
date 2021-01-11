@@ -2,7 +2,18 @@
   Layout = "_Layout";
 }
 
-<h1>Factory Page</h1>
+<h1>SillyStringz Factory Administration Panel</h1>
 
-<p>@Html.ActionLink("View all Engineers", "Index", "Engineers")</p>
-<p>@Html.ActionLink("View all Machines", "Index", "Machines")</p>
+<h2>Dashboard:</h2>
+<p>From here, you can manage your factory.</p>
+<ul>
+  <li>Add engineer</li>
+  <li>Add machines</li>
+  <li>Associate engineers with machines</li>
+  <li>Delete engineers</li>
+  <li>Delete machines</li>
+  <li>And much more!</li>
+</ul>
+
+<div class="btn btn-success">@Html.ActionLink("View all Engineers", "Index", "Engineers")</div>
+<div class="btn btn-danger">@Html.ActionLink("View all Machines", "Index", "Machines")</div>
