@@ -1,3 +1,21 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h3>Edit thisEngineer: @Html.DisplayFor(model => model.Name)</h3>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.EngineerId)
+
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+
+  @Html.Label("Associate Machine with Engineer")
+  @Html.DropDownList("MachineId")
+
+  <input type="submit" value="Save" />
+}
+
