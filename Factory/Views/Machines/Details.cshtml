@@ -2,35 +2,29 @@
   Layout = "_Layout";
 }
 
-@model Factory.Models.Engineer
+@model Factory.Models.Machine
 
-<h3>Engineer Details</h3>
+<h3>Machine Details</h3>
 
 <h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
 
 @if (@Model.Machines.Count == 0)
 {
-  <h2>This engineer is not assigned to fix any machines</h2>
+  <h2>This Machine is not assigned to any engineers</h2>
 }
 else
 {
 
-  <h4>Machines assigned to this engineer</h4>
+  <h4>Engineers assigned to this Machine</h4>
   <ul>
-    @foreach (var join in Model.Machines)
+    @foreach (var join in Model.Engineers)
     {
-      <li>@join.Engineer.Name</li>
-      @using (Html.BeginForm("DeleteMachine", "Engineers"))
-      {
-        @Html.Hidden("joinId", @join.MachineEngineerId)
-        <input type="submit" value="Deassociate" />
-      }
+      <li>@join.Machine.Name</li>
     }
   </ul>
-
 }
 
-<p>@Html.ActionLink("Back to Engineers", "Index")</p>
-<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
-<p>@Html.ActionLink("Fire Engineer", "Delete", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Back to Machines", "Index")</p>
+<p>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Remove Machine", "Delete", new { id = Model.MachineId })</p>
