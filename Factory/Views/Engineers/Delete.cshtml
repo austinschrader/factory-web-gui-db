@@ -1,3 +1,15 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h2>Fire engineer</h2>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Fire" />
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
