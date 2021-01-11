@@ -80,6 +80,16 @@ namespace Factory.Controllers
       return View(thisMachine);
     }
 
+    [HttpPost]
+    public ActionResult AddEngineer(Machine machine, int EngineerId)
+    {
+      if (EngineerId != 0)
+      {
+        _db.MachineEngineer.Add(new MachineEngineer() { EngineerId = EngineerId, MachineId = machine.MachineId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
   }
 }
