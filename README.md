@@ -39,8 +39,10 @@ By Austin Schrader, 1/8/2020
 
 ## How to Setup MySQL Database Using Entity Framework
 
-1. If you modify the structure of the data first run `dotnet ef migrations add {MIGRATIONNAMEHERE}`
-2. Then, run the `dotnet ef database update` to apply the migration to your MySQL database
+1. Navigate to the project directory, in this case Factory.Solution > Factory
+2. Run `dotnet ef database update` to generate the MySQL Database using the migration
+3. If you want to update the structure of the DB, first modify the models, then run: `dotnet ef migrations add {MIGRATIONNAMEHERE}`
+4. Finally, run the `dotnet ef database update` to apply the migration to your MySQL database
 
 ## Clone this repository
 
