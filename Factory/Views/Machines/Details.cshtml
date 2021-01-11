@@ -1,3 +1,36 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h3>Engineer Details</h3>
+
+<h5>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h5>
+
+@if (@Model.Machines.Count == 0)
+{
+  <h2>This engineer is not assigned to fix any machines</h2>
+}
+else
+{
+
+  <h4>Machines assigned to this engineer</h4>
+  <ul>
+    @foreach (var join in Model.Machines)
+    {
+      <li>@join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.MachineEngineerId)
+        <input type="submit" value="Deassociate" />
+      }
+    }
+  </ul>
+
+}
+
+<p>@Html.ActionLink("Back to Engineers", "Index")</p>
+<p>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId })</p>
+<p>@Html.ActionLink("Fire Engineer", "Delete", new { id = Model.EngineerId })</p>
