@@ -82,7 +82,13 @@ namespace Factory.Controllers
     }
 
     [HttpPost, ActionName("Delete")]
-    pu
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      _db.Engineers.Remove(thisEngineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
 
   }
 }
