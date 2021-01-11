@@ -37,6 +37,11 @@ By Austin Schrader, 1/8/2020
 6. Select Dump Data & Structure
 7. Start Import
 
+## How to Setup MySQL Database Using Entity Framework
+
+1. If you modify the structure of the data first run `dotnet ef migrations add {MIGRATIONNAMEHERE}`
+2. Then, run the `dotnet ef database update` to apply the migration to your MySQL database
+
 ## Clone this repository
 
 1. Download this repository by clicking the "Code" button and then copy the url
